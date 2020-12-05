@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 #gem 'devise' use to login
 gem 'devise';
+gem 'devise_masquerade'
 #add bootstrap
 gem 'bootstrap', '~> 4.5.3'
 gem 'jquery-rails'
