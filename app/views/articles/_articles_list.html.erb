@@ -1,0 +1,19 @@
+<% @articles.each do |article| %>
+  <div class="card mt-3 post">
+    <div class="card-header d-flex align-items-center">
+      <%= link_to user_path(article.user), class: "no-text-decoration" do %>
+        <%= image_tag article.user.avatar, class: "post-author-icon" %>
+      <% end %>
+      <%= link_to user_path(article.user), class: "normal-color no-text-decoration",
+        title: article.user.name do %>
+        <strong><%= article.user.name %></strong>
+      <% end %>
+      <% if article.is_belongs_to? current_user %>
+        <%= link_to article_path(article), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
+          <i class="far fa-trash-alt" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <%= render "images", {article: article} %>
+  </div>
+<% end %>

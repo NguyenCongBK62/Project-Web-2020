@@ -6,10 +6,14 @@ ruby '2.6.3'
 gem 'devise';
 gem 'devise_masquerade'
 #add bootstrap
-gem 'bootstrap', '~> 4.5.3'
+gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'mini_racer'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'cloudinary'
+gem 'figaro'
+gem 'dropzonejs-rails'
+gem 'toastr-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
@@ -17,6 +21,7 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
