@@ -15,5 +15,12 @@
       <% end %>
     </div>
     <%= render "images", {article: article} %>
+    
+        <div id="like-icon-post-<%= article.id.to_s %>">
+          <%= render "like_icon", {is_liked: article.is_liked(current_user), article: article} %>
+        </div>
+        <div id="like-text-post-<%= article.id.to_s %>">
+        <%= render "like_text", {likes: article.likes} %>
+      </div>
   </div>
 <% end %>

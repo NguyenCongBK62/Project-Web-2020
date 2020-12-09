@@ -11,6 +11,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @photos = @article.photos
+    @likes = @article.likes.includes(:user)
+    @is_liked = @article.is_liked(current_user)
   end
 
   # GET /articles/new
