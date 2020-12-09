@@ -1,6 +1,6 @@
 <%= link_to article_path(article) do %>
   <% if article.images.size == 1 %>
-    <%= image_tag article.images.first, class: "card-img-top" %>
+    <%= image_tag article.images.first, class: "d-block w-100" %>
   <% else %>
     <div class="carousel slide" data-interval="false" id="carousel-post-<%= article.id %>">
       <div class="carousel-inner">
@@ -10,7 +10,7 @@
           <% else %>
             <div class="carousel-item">
           <% end %>
-              <%= image_tag image, class: "card-img-top" %>
+              <%= image_tag image, class: "d-block w-100" %>
             </div>
         <% end %>
       </div>

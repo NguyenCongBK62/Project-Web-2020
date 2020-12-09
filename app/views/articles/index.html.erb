@@ -15,9 +15,7 @@
                 placeholder: "Say something about this ..." %>
             </div>
           </div>
-          <%= f.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %>
-          <div class="dropzone-previews mb-3">
-          </div>
+          <%= f.file_field :images, multiple: true %><br><br>
           <%= f.submit "Post", class: "btn btn-primary" %>
         <% end %>
       </div>

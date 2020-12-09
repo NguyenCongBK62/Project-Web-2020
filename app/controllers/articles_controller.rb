@@ -54,15 +54,10 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1.json
   def destroy
     if @article.user == current_user
-      if @article.destroy
-        flash[:notice] = "Post deleted!"
-      else
-        flash[:alert] = "Something went wrong ..."
-      end
-    else
-      flash[:notice] = "You don't have permission to do that!"
+      @article.destroy
+      flash[:success] = "article deleted"
+      redirect_to root_path
     end
-    redirect_to root_path
   end
 
   private

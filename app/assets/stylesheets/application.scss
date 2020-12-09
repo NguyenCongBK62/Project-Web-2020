@@ -1,6 +1,6 @@
+
 @import "bootstrap";
 @import "toastr";
-@import "dropzone/dropzone";
 
 body {
   background-color: #fafafa;
@@ -460,4 +460,9 @@ footer .nav-item {
 .popover-body {
   background: #fff;
   padding: 0;
+}
+
+.w-100 {
+  width: 100% !important;
+  height: 75vh;
 }
