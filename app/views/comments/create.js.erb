@@ -1,0 +1,4 @@
+$('#comment-post-<%= @article.id.to_s %>').
+  html('<%= j render "articles/comment_list", {article: @article} %>');
+$('#comment-form-post-<%= @article.id.to_s %> #comment_content').val("");
+console.log("create comment success");

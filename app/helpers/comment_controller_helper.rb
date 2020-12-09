@@ -1,0 +1,2 @@
+module CommentControllerHelper
+end

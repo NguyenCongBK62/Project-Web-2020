@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   def show
     @photos = @article.photos
     @likes = @article.likes.includes(:user)
+    @comment = Comment.new
     @is_liked = @article.is_liked(current_user)
   end
 

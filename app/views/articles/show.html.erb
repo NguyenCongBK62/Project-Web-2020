@@ -36,4 +36,7 @@
         <div id="like-icon-post-<%= @article.id.to_s %>">
           <%= render "like_icon", {is_liked: @is_liked, article: @article} %>
         </div>
+        <div class="row actions" id="comment-form-post-<%= @article.id.to_s %>">
+        <%= render 'comment_form', article: @article %>
+      </div>
 </div>
