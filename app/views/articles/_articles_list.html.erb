@@ -14,6 +14,11 @@
         <% end %>
       <% end %>
     </div>
+    
+    <div>
+        <span>     <%= article.content %></span>
+    </div>
+    <hr class="mb-0">
     <%= render "images", {article: article} %>
     
     <div class="card-body">
@@ -29,10 +34,7 @@
       <div id="like-text-post-<%= article.id.to_s %>">
         <%= render "like_text", {likes: article.likes} %>
       </div>
-      <div>
-        <span><strong><%= article.user.name %></strong></span>
-        <span><%= article.content %></span>
-      </div>
+      
       <!-- load comments -->
       
       <%= link_to time_ago_in_words(article.created_at).upcase + " AGO", article_path(article),

@@ -1,4 +1,4 @@
-<%= form_for [article, Comment.new], :html => {:class => "w-100"}, remote: true do |f| %>
+<%= form_for [article, Comment.new], :html => {:class => "w-75 p-3"}, remote: true do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :article_id, value: article.id %>
   <%= f.text_field :content, class: "form-control comment-input border-0",
