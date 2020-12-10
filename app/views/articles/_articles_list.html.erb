@@ -16,11 +16,35 @@
     </div>
     <%= render "images", {article: article} %>
     
+    <div class="card-body">
+      <div class="row actions">
         <div id="like-icon-post-<%= article.id.to_s %>">
           <%= render "like_icon", {is_liked: article.is_liked(current_user), article: article} %>
         </div>
-        <div id="like-text-post-<%= article.id.to_s %>">
+        <a href="#" class="core-sprite comment hide-text">Comment</a>
+        <div id="bookmark-icon-post-<%= article.id.to_s %>" class="ml-auto">
+          <%= render "bookmark_icon", {is_bookmarked: article.is_bookmarked(current_user), article: article} %>
+        </div>
+      </div>
+      <div id="like-text-post-<%= article.id.to_s %>">
         <%= render "like_text", {likes: article.likes} %>
       </div>
+      <div>
+        <span><strong><%= article.user.name %></strong></span>
+        <span><%= article.content %></span>
+      </div>
+      <!-- load comments -->
+      
+      <%= link_to time_ago_in_words(article.created_at).upcase + " AGO", article_path(article),
+        class: "light-color post-time no-text-decoration" %>
+      <hr>
+      <div class="row actions" id="comment-form-post-<%= article.id.to_s %>">
+        <%= render 'comment_form', {article: article} %>
+      </div>
+      
+      <div id="comment-post-<%= article.id.to_s %>">
+        <%= render 'comment_list', {article: article} %>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -7,8 +7,8 @@
     </div>
     <div class="col-lg-4 col-md-5 mt-sm-4 mt-md-0">
       <div class="row px-3 d-flex align-items-center">
-        <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
-          <%= image_tag avatar_url(@post.user), class: "post-author-icon" %>
+        <%= link_to user_path(@article.user), class: "no-text-decoration" do %>
+          <%= image_tag avatar_url(@article.user), class: "post-author-icon" %>
         <% end %>
         <%= link_to user_path(@article.user), class: "no-text-decoration" do %>
           <%= image_tag (@article.user).avatar, class: "post-author-icon" %>
@@ -31,12 +31,30 @@
           <span><%= @article.content %></span>
         </div>
       <% end %>
-    </div>
-  </div>
+      
+      <div id="comment-post-<%= @article.id.to_s %>">
+          <%= render 'comment_list', article: @article %>
+        </div>
+      </div>
+      <hr class="mt-0">
+
+      <div class="row actions">
         <div id="like-icon-post-<%= @article.id.to_s %>">
           <%= render "like_icon", {is_liked: @is_liked, article: @article} %>
         </div>
-        <div class="row actions" id="comment-form-post-<%= @article.id.to_s %>">
+        <a href="#" class="core-sprite comment hide-text">Comment</a>
+        <div id="bookmark-icon-post-<%= @article.id.to_s %>" class="ml-auto">
+          <%= render "bookmark_icon", {is_bookmarked: @is_bookmarked, article: @article} %>
+        </div>
+      </div>
+      <div id="like-text-post-<%= @article.id.to_s %>">
+        <%= render "like_text", {likes: @likes} %>
+      </div>
+      <div class="light-color post-time"><%= time_ago_in_words(@article.created_at).upcase %> AGO</div>
+      <hr>
+      <div class="row actions" id="comment-form-post-<%= @article.id.to_s %>">
         <%= render 'comment_form', article: @article %>
       </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,2 @@
+module BookmarkControllerHelper
+end

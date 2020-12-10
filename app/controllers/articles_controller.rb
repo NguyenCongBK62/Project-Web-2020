@@ -11,10 +11,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @photos = @article.photos
+    @images = @article.images
     @likes = @article.likes.includes(:user)
     @comment = Comment.new
     @is_liked = @article.is_liked(current_user)
+    @is_bookmarked = @article.is_bookmarked(current_user)
   end
 
   # GET /articles/new
