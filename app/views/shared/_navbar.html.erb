@@ -14,13 +14,13 @@
       <% end %>
       <ul class="navbar-nav ml-md-auto">
         <li class="nav-item">
-          <a class="nav-link core-sprite explore-icon hide-text" href="#">Explore</a>
+          <%= link_to "", list_user_path, class: "nav-link core-sprite explore-icon hide-text" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link core-sprite notification-icon hide-text" href="#">Notification</a>
+          <a class="nav-link core-sprite notification-icon hide-text" href="<%= following_user_path(current_user) %>"></a>
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
+          <%= link_to "", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
         </li>
       </ul>
     </div>

@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-  background-color: #fff;
+  background-color: rgb(207, 226, 241);
   border-bottom: 1px solid rgba(0,0,0,.0975);
   height: 77px;
 }
@@ -490,4 +490,28 @@ footer .nav-item {
   strong {
     display: block;
   }
+}
+
+.over {
+	margin-left: auto;
+	margin-right: auto;
+  display: block;
+  border-radius: 50%;
+}
+.user-list{
+  margin: 40px;
+}
+.user-name{
+  text-align: center;
+  font-size: medium;
+  a {
+    color: rgb(112, 109, 111);
+  }
+}
+
+.item{
+  background: rgb(242, 243, 241);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20%;
 }
