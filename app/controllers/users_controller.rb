@@ -3,7 +3,18 @@ class UsersController < ApplicationController
     @users = User.search(params[:term])
     respond_to :js
   end
-
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(:page => params[:page], :per_page => 6)
+    render 'show_follow'
+  end
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(:page => params[:page], :per_page => 6)
+    render 'show_follow'
+  end
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.includes(:photos, :likes, :comments)
