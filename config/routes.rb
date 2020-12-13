@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'posts#index'
-
   devise_for :users,
     path: '',
     path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
+  get "/list_user" => 'users#list_user'
 
   resources :posts, only: [:index, :show, :create, :destroy] do
     resources :photos, only: [:create]
